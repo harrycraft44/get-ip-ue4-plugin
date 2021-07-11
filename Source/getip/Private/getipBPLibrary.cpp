@@ -6,6 +6,10 @@
 #include "Engine/DemoNetConnection.h"
 #include <SocketSubsystem.h>
 #include <IPAddress.h>
+#include "GenericPlatform/GenericPlatformMisc.h"
+#include "Containers/UnrealString.h"
+#include <string>
+
 
 UgetipBPLibrary::UgetipBPLibrary(const FObjectInitializer& ObjectInitializer)
 : Super(ObjectInitializer)
@@ -13,13 +17,17 @@ UgetipBPLibrary::UgetipBPLibrary(const FObjectInitializer& ObjectInitializer)
 
 }
 
-FString UgetipBPLibrary::getipSampleFunction()
+void UgetipBPLibrary::getipSampleFunction(FString& ip, FString& MacAddress, FString& UniqueDeviceId, FString& LoginId)
 {
-
-
+	
+	
 	bool canBind = false;
 	TSharedRef<FInternetAddr> localIp = ISocketSubsystem::Get(PLATFORM_SOCKETSUBSYSTEM)->GetLocalHostAddr(*GLog, canBind);
-	return (localIp->IsValid() ? localIp->ToString(false) : "");
-	
-}
+	ip = (localIp->IsValid() ? localIp->ToString(false) : "");
+	MacAddress = FGenericPlatformMisc::GetMacAddressString();
+	UniqueDeviceId = FGenericPlatformMisc::GetDeviceId();
+	LoginId = FGenericPlatformMisc::GetLoginId();
+
+	}
+
 

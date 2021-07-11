@@ -20,9 +20,13 @@ void EmptyLinkFunctionForGeneratedCodegetipBPLibrary() {}
 // End Cross Module References
 	DEFINE_FUNCTION(UgetipBPLibrary::execgetipSampleFunction)
 	{
+		P_GET_PROPERTY_REF(FStrProperty,Z_Param_Out_ip);
+		P_GET_PROPERTY_REF(FStrProperty,Z_Param_Out_MacAddress);
+		P_GET_PROPERTY_REF(FStrProperty,Z_Param_Out_UniqueDeviceId);
+		P_GET_PROPERTY_REF(FStrProperty,Z_Param_Out_LoginId);
 		P_FINISH;
 		P_NATIVE_BEGIN;
-		*(FString*)Z_Param__Result=UgetipBPLibrary::getipSampleFunction();
+		UgetipBPLibrary::getipSampleFunction(Z_Param_Out_ip,Z_Param_Out_MacAddress,Z_Param_Out_UniqueDeviceId,Z_Param_Out_LoginId);
 		P_NATIVE_END;
 	}
 	void UgetipBPLibrary::StaticRegisterNativesUgetipBPLibrary()
@@ -37,28 +41,40 @@ void EmptyLinkFunctionForGeneratedCodegetipBPLibrary() {}
 	{
 		struct getipBPLibrary_eventgetipSampleFunction_Parms
 		{
-			FString ReturnValue;
+			FString ip;
+			FString MacAddress;
+			FString UniqueDeviceId;
+			FString LoginId;
 		};
-		static const UE4CodeGen_Private::FStrPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FStrPropertyParams NewProp_ip;
+		static const UE4CodeGen_Private::FStrPropertyParams NewProp_MacAddress;
+		static const UE4CodeGen_Private::FStrPropertyParams NewProp_UniqueDeviceId;
+		static const UE4CodeGen_Private::FStrPropertyParams NewProp_LoginId;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FStrPropertyParams Z_Construct_UFunction_UgetipBPLibrary_getipSampleFunction_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(getipBPLibrary_eventgetipSampleFunction_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FStrPropertyParams Z_Construct_UFunction_UgetipBPLibrary_getipSampleFunction_Statics::NewProp_ip = { "ip", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(getipBPLibrary_eventgetipSampleFunction_Parms, ip), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FStrPropertyParams Z_Construct_UFunction_UgetipBPLibrary_getipSampleFunction_Statics::NewProp_MacAddress = { "MacAddress", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(getipBPLibrary_eventgetipSampleFunction_Parms, MacAddress), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FStrPropertyParams Z_Construct_UFunction_UgetipBPLibrary_getipSampleFunction_Statics::NewProp_UniqueDeviceId = { "UniqueDeviceId", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(getipBPLibrary_eventgetipSampleFunction_Parms, UniqueDeviceId), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FStrPropertyParams Z_Construct_UFunction_UgetipBPLibrary_getipSampleFunction_Statics::NewProp_LoginId = { "LoginId", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(getipBPLibrary_eventgetipSampleFunction_Parms, LoginId), METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UgetipBPLibrary_getipSampleFunction_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UgetipBPLibrary_getipSampleFunction_Statics::NewProp_ReturnValue,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UgetipBPLibrary_getipSampleFunction_Statics::NewProp_ip,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UgetipBPLibrary_getipSampleFunction_Statics::NewProp_MacAddress,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UgetipBPLibrary_getipSampleFunction_Statics::NewProp_UniqueDeviceId,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UgetipBPLibrary_getipSampleFunction_Statics::NewProp_LoginId,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UgetipBPLibrary_getipSampleFunction_Statics::Function_MetaDataParams[] = {
-		{ "Category", "getip" },
-		{ "DisplayName", "getip" },
-		{ "Keywords", "ip" },
+		{ "Category", "system information" },
+		{ "DisplayName", "Get Sysinfo" },
+		{ "Keywords", "IP,mac,id" },
 		{ "ModuleRelativePath", "Public/getipBPLibrary.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UgetipBPLibrary_getipSampleFunction_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UgetipBPLibrary, nullptr, "getipSampleFunction", nullptr, nullptr, sizeof(getipBPLibrary_eventgetipSampleFunction_Parms), Z_Construct_UFunction_UgetipBPLibrary_getipSampleFunction_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UgetipBPLibrary_getipSampleFunction_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04022401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UgetipBPLibrary_getipSampleFunction_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UgetipBPLibrary_getipSampleFunction_Statics::Function_MetaDataParams)) };
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UgetipBPLibrary_getipSampleFunction_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UgetipBPLibrary, nullptr, "getipSampleFunction", nullptr, nullptr, sizeof(getipBPLibrary_eventgetipSampleFunction_Parms), Z_Construct_UFunction_UgetipBPLibrary_getipSampleFunction_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UgetipBPLibrary_getipSampleFunction_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04422401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UgetipBPLibrary_getipSampleFunction_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UgetipBPLibrary_getipSampleFunction_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_UgetipBPLibrary_getipSampleFunction()
 	{
 		static UFunction* ReturnFunction = nullptr;
@@ -87,7 +103,7 @@ void EmptyLinkFunctionForGeneratedCodegetipBPLibrary() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_getip,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UgetipBPLibrary_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_UgetipBPLibrary_getipSampleFunction, "getipSampleFunction" }, // 1306425322
+		{ &Z_Construct_UFunction_UgetipBPLibrary_getipSampleFunction, "getipSampleFunction" }, // 3133806222
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UgetipBPLibrary_Statics::Class_MetaDataParams[] = {
@@ -124,7 +140,7 @@ void EmptyLinkFunctionForGeneratedCodegetipBPLibrary() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UgetipBPLibrary, 1995522764);
+	IMPLEMENT_CLASS(UgetipBPLibrary, 2119986288);
 	template<> GETIP_API UClass* StaticClass<UgetipBPLibrary>()
 	{
 		return UgetipBPLibrary::StaticClass();
