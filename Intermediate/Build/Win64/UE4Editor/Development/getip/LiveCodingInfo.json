@@ -1,0 +1,13 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.getip.cpp.obj": [
+			"getip.cpp.obj",
+			"getipBPLibrary.cpp.obj"
+		],
+		"Module.getip.gen.cpp.obj": [
+			"getip.init.gen.cpp.obj",
+			"getipBPLibrary.gen.cpp.obj"
+		]
+	}
+}

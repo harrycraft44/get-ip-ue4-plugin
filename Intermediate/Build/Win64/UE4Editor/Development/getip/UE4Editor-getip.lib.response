@@ -1,0 +1,14 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-getip.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"D:\htsandyoutube\uep\project_001\Intermediate\Build\Win64\project_001Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"D:\htsandyoutube\uep\project_001\Plugins\getip\Intermediate\Build\Win64\UE4Editor\Development\getip\Module.getip.cpp.obj"
+"D:\htsandyoutube\uep\project_001\Plugins\getip\Intermediate\Build\Win64\UE4Editor\Development\getip\Module.getip.gen.cpp.obj"
+"D:\htsandyoutube\uep\project_001\Plugins\getip\Intermediate\Build\Win64\UE4Editor\Development\getip\Default.rc2.res"
+/OUT:"D:\htsandyoutube\uep\project_001\Plugins\getip\Intermediate\Build\Win64\UE4Editor\Development\getip\UE4Editor-getip.lib"
+/INCLUDE:IMPLEMENT_MODULE_getip
