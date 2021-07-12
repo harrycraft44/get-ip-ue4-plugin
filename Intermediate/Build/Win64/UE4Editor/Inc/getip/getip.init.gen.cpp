@@ -21,7 +21,7 @@ void EmptyLinkFunctionForGeneratedCodegetip_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0x626D1A74,
+				0x63223D7C,
 				0xBBB3F5C1,
 				METADATA_PARAMS(nullptr, 0)
 			};

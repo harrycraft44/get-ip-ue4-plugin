@@ -27,6 +27,10 @@ class UgetipBPLibrary : public UBlueprintFunctionLibrary
 {
 	GENERATED_UCLASS_BODY()
 
-	UFUNCTION(BlueprintCallable, meta = (DisplayName = "getip", Keywords = "ip"), Category = "getip")
-	static FString getipSampleFunction();
+		UFUNCTION(BlueprintCallable, meta = (DisplayName = "Get Sysinfo", Keywords = "IP,mac,id"), Category = "system information")
+		static void getipSampleFunction(FString& ip, FString& MacAddress, FString& UniqueDeviceId, FString& LoginId);
+		
+
+	
 };
+
